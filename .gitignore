@@ -1,0 +1,21 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Raw third-party dataset files remain local. Processed manifests, compact model
+# artifacts, measured results, figures, and reports are intentionally versioned.
+data/raw/
+results/
+reports/rendered/
+work/
+
+# Kaggle credentials must never enter version control.
+kaggle.json
+.kaggle/

@@ -1,0 +1,30 @@
+{
+  "source": "data/raw/WM811k_Dataset",
+  "samples": 902,
+  "classes": {
+    "Center": 100,
+    "Donut": 102,
+    "Edge Local": 103,
+    "Edge Ring": 102,
+    "Local": 100,
+    "Scratch": 100,
+    "near full": 95,
+    "none": 100,
+    "random": 100
+  },
+  "dimensions": {
+    "32x32": 902
+  },
+  "unique_sha256": 902,
+  "perceptual_groups": 888,
+  "split_samples": {
+    "train": 627,
+    "test": 138,
+    "val": 137
+  },
+  "split_groups": {
+    "train": 615,
+    "val": 135,
+    "test": 138
+  }
+}
