@@ -11,9 +11,22 @@ TCAD.
 root cause. It classifies spatial patterns in a curated image dataset. Its value
 is prioritization and hypothesis support before physics-based investigation.
 
+![Representative wafer-map patterns from the curated nine-class dataset](outputs/figures/dataset_examples.png)
+
+## Technical snapshot
+
+| Question | Implementation |
+|---|---|
+| What is the task? | Nine-class wafer-map pattern triage |
+| What does the model see? | Cartesian image, polar image, and a 17-value engineer-readable spatial signature |
+| How is leakage controlled? | Exact and perceptual groups found within each label folder remain within one partition; a global cross-label duplicate audit is a documented follow-up |
+| How is confidence handled? | Validation-only temperature scaling and an adjustable review threshold |
+| What supports interpretation? | Spatial descriptors, calibrated class ranking, and similar known cases |
+| What is the operational boundary? | Review prioritization and hypothesis support, not causal root-cause diagnosis |
+
 ## What is implemented
 
-- Leakage-aware dataset audit and reproducible train/validation/test manifest
+- Duplicate-aware dataset audit and reproducible train/validation/test manifest
 - Interpretable 17-value spatial signature (radial, angular, density, centroid,
   and anisotropy descriptors)
 - WPST fusion CNN with Cartesian and polar views plus engineered descriptors
@@ -29,6 +42,8 @@ accuracy** on the untouched 138-image grouped test split; the engineered-feature
 logistic baseline achieved 0.140 macro-F1. These results apply only to this
 curated JPEG derivative and exact manifest. See `outputs/metrics.json` and the
 technical report for per-class findings and limitations.
+
+This is a single-seed result with 15–16 test examples per class. The baseline is an exploratory engineered-feature comparator, not sufficient evidence that the fusion architecture is superior in general. Multiple-seed confidence intervals, stronger image-only and descriptor-only baselines, and a global cross-label near-duplicate audit remain important follow-up work.
 
 ## Repository map
 
