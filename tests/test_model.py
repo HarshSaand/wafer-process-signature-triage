@@ -6,8 +6,8 @@ import pytest
 
 torch = pytest.importorskip("torch")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from wafer_tcad.model import WaferFusionCNN, TemperatureScaler, cartesian_to_polar
-from wafer_tcad.metrics import expected_calibration_error, multiclass_brier_score, nearest_neighbors
+from wafer_process_ai.model import WaferFusionCNN, TemperatureScaler, cartesian_to_polar
+from wafer_process_ai.metrics import expected_calibration_error, multiclass_brier_score, nearest_neighbors
 
 def test_polar_shape_and_gradients():
     x=torch.rand(2,1,32,48,requires_grad=True); y=cartesian_to_polar(x,16,20)

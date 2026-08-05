@@ -6,10 +6,10 @@ from pathlib import Path
 import numpy as np, torch
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]; sys.path.insert(0,str(ROOT/"src"))
-from wafer_tcad.model import WaferFusionCNN
-from wafer_tcad.metrics import nearest_neighbors
-from wafer_tcad.data import decode_wafer
-from wafer_tcad.features import feature_vector
+from wafer_process_ai.model import WaferFusionCNN
+from wafer_process_ai.metrics import nearest_neighbors
+from wafer_process_ai.data import decode_wafer
+from wafer_process_ai.features import feature_vector
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("image"); ap.add_argument("--checkpoint",default="artifacts/model.pt"); ap.add_argument("--features",nargs="*",type=float,default=[]); ap.add_argument("--top-k",type=int,default=5); a=ap.parse_args()
     ck=torch.load(a.checkpoint,map_location="cpu",weights_only=False); n=ck["config"]["num_features"]

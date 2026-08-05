@@ -4,8 +4,8 @@ import argparse, json, sys
 from collections import Counter
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from wafer_tcad.data import assign_duplicate_groups, build_manifest, stratified_group_split, write_manifest, decode_wafer
-from wafer_tcad.features import spatial_features
+from wafer_process_ai.data import assign_duplicate_groups, build_manifest, stratified_group_split, write_manifest, decode_wafer
+from wafer_process_ai.features import spatial_features
 
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument("--data", type=Path, default=Path("data/raw/WM811k_Dataset")); parser.add_argument("--output", type=Path, default=Path("data/processed/manifest.csv")); parser.add_argument("--seed", type=int, default=42)

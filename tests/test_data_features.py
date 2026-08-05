@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
-from wafer_tcad.data import decode_wafer, defect_mask, stratified_group_split
-from wafer_tcad.features import FEATURE_NAMES, feature_vector, spatial_features
+from wafer_process_ai.data import decode_wafer, defect_mask, stratified_group_split
+from wafer_process_ai.features import FEATURE_NAMES, feature_vector, spatial_features
 
 def test_decode_converts_grayscale_and_resizes(tmp_path):
     path = tmp_path / "gray.png"; Image.fromarray(np.zeros((9, 7), np.uint8)).save(path)

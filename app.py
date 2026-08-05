@@ -15,9 +15,9 @@ import torch
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
 
-from wafer_tcad.features import spatial_features  # noqa: E402
-from wafer_tcad.metrics import nearest_neighbors  # noqa: E402
-from wafer_tcad.model import WaferFusionCNN  # noqa: E402
+from wafer_process_ai.features import spatial_features  # noqa: E402
+from wafer_process_ai.metrics import nearest_neighbors  # noqa: E402
+from wafer_process_ai.model import WaferFusionCNN  # noqa: E402
 
 DEFAULT_CHECKPOINT = ROOT / "artifacts" / "model.pt"
 
@@ -122,7 +122,7 @@ def main() -> None:
             help="Operational scenario control—not a threshold validated by this study.",
         )
         top_k = st.slider("Similar cases", 1, 10, 5)
-        st.caption("Prototype decision support only. A predicted pattern is not a process root cause or TCAD result.")
+        st.caption("Prototype decision support only. A predicted pattern is not a process root cause or physics-simulation result.")
 
     checkpoint = Path(checkpoint_path)
     if not checkpoint.exists():
@@ -199,12 +199,12 @@ def main() -> None:
                 st.markdown(f"**{case['label']}**")
                 st.caption(f"Cosine similarity: {case['similarity']:.3f}")
 
-    with st.expander("How this complements a process/TCAD workflow"):
+    with st.expander("How this complements a semiconductor process workflow"):
         st.markdown("""
         1. Screen wafer-test signatures and prioritize uncertain or unusual cases.
         2. Compare a case with known signatures and spatial descriptors.
         3. Join flagged wafers to lot, tool, recipe, metrology, and sensor context.
-        4. Form a process hypothesis; use calibrated TCAD or designed experiments to test it.
+        4. Form a process hypothesis; use calibrated physics models or designed experiments to test it.
 
         WPST performs steps 1–2. It does **not** simulate fabrication physics, infer causality,
         or replace engineer review.

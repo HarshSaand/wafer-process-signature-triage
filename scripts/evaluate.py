@@ -6,8 +6,8 @@ from pathlib import Path
 import torch
 ROOT=Path(__file__).resolve().parents[1]; sys.path.insert(0,str(ROOT/"src")); sys.path.insert(0,str(ROOT/"scripts"))
 from train import rows, ManifestDataset, predict
-from wafer_tcad.model import WaferFusionCNN
-from wafer_tcad.metrics import classification_metrics
+from wafer_process_ai.model import WaferFusionCNN
+from wafer_process_ai.metrics import classification_metrics
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--manifest",default="data/processed/manifest.csv"); ap.add_argument("--data-root",default=None); ap.add_argument("--checkpoint",default="artifacts/model.pt"); ap.add_argument("--output",default="outputs/metrics.json"); ap.add_argument("--batch-size",type=int,default=64); a=ap.parse_args()
     ck=torch.load(a.checkpoint,map_location="cpu",weights_only=False); rec=[r for r in rows(a.manifest) if r["split"]=="test"]

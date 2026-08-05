@@ -4,11 +4,10 @@ WPST is a locally runnable semiconductor-AI prototype that screens wafer-map
 defect patterns, exposes engineer-readable spatial signatures, calibrates model
 confidence, and retrieves similar known cases. It is designed as a front end to
 process-excursion triage: flagged signatures can be joined with lot/tool/recipe
-context and then investigated with process knowledge, designed experiments, or
-TCAD.
+context and then investigated with process knowledge and designed experiments.
 
-**Important boundary:** this is not a TCAD simulator and does not infer process
-root cause. It classifies spatial patterns in a curated image dataset. Its value
+**Important boundary:** this is not a process simulator and does not infer root
+cause. It classifies spatial patterns in a curated image dataset. Its value
 is prioritization and hypothesis support before physics-based investigation.
 
 ![Representative wafer-map patterns from the curated nine-class dataset](outputs/figures/dataset_examples.png)
@@ -55,7 +54,7 @@ scripts/audit_dataset.py       Audit, features, groups, and split manifest
 scripts/train.py               Baseline + calibrated WPST training
 scripts/evaluate.py            Held-out metrics and plots
 scripts/infer.py               Single-image JSON inference
-src/wafer_tcad/                Data, features, model, and metric modules
+src/wafer_process_ai/          Data, features, model, and metric modules
 tests/                         Unit and smoke tests
 data/processed/                Generated manifest and audit summary
 artifacts/                     Generated model checkpoint and baseline

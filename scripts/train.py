@@ -9,9 +9,9 @@ from PIL import Image
 from torch.utils.data import DataLoader, Dataset
 
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT / "src"))
-from wafer_tcad.model import WaferFusionCNN, TemperatureScaler
-from wafer_tcad.data import decode_wafer
-from wafer_tcad.features import FEATURE_NAMES, feature_vector
+from wafer_process_ai.model import WaferFusionCNN, TemperatureScaler
+from wafer_process_ai.data import decode_wafer
+from wafer_process_ai.features import FEATURE_NAMES, feature_vector
 
 
 def rows(path):

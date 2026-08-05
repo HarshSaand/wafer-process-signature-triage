@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "wafer-process-signature-triage"
 version = "0.1.0"
-description = "Interpretable wafer-map screening that complements process and TCAD workflows"
+description = "Interpretable wafer-map screening for semiconductor process-excursion analysis"
 readme = "README.md"
 requires-python = ">=3.10,<3.15"
 license = {text = "MIT"}

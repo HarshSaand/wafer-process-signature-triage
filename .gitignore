@@ -16,7 +16,8 @@ results/
 reports/rendered/
 work/
 projects/
-outputs/lithotwin-ai-tcad/
+outputs/lithotwin-computational-lithography/
+outputs/processtwin-semiconductor-ai/
 
 # Kaggle credentials must never enter version control.
 kaggle.json
