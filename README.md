@@ -12,6 +12,18 @@ is prioritization and hypothesis support before physics-based investigation.
 
 ![Representative wafer-map patterns from the curated nine-class dataset](outputs/figures/dataset_examples.png)
 
+## Dataset at a glance
+
+The audited Kaggle image release contains **902 JPEG wafer-map images, each 32 × 32 pixels**, arranged in nine label folders: Center (100), Donut (102), Edge Local (103), Edge Ring (102), Local (100), Scratch (100), near full (95), none (100) and random (100). One item is a small spatial defect-pattern image with its folder-derived class—not a process recipe, sensor trace or verified root-cause record.
+
+| Partition | Images | Perceptual groups |
+|---|---:|---:|
+| Training | 627 | 615 |
+| Validation | 137 | 135 |
+| Test | 138 | 138 |
+
+All 902 byte hashes are unique; the audit identifies 888 perceptual groups. Grouping is performed within label folders and keeps related images in one partition; cross-label near-duplicate checks remain a limitation. This is a **curated image derivative, not the full 811,457-wafer WM-811K collection**. It lacks lot/tool/recipe metadata. Source and access details: [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md); exact counts: [`manifest.summary.json`](data/processed/manifest.summary.json).
+
 ## Technical snapshot
 
 | Question | Implementation |
